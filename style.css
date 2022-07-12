@@ -82,6 +82,12 @@ div.options {
     height: auto;
 }
 
-div.outer-container {
+.erase:hover {
+    transform: scale(1.02);
+    transition: all 0.5s ease-in-out;
+}
 
+.erase:hover > #bin {
+    transform: translate(0, -5px);
+    transition: all 0.5s ease-in-out;
 }
