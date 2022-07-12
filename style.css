@@ -58,7 +58,7 @@ div.options {
 
 #colorPicker:hover {
     cursor: pointer;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
     transition-property: transform;
     transform: scale(1.1);
     transition-timing-function: ease-in-out;
@@ -78,6 +78,11 @@ div.options {
     color: white;
     background: #333333;
     padding: 16px;
+}
+
+.mode button:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in;
 }
 
 .erase {
@@ -100,10 +105,10 @@ div.options {
 
 .erase:hover {
     transform: scale(1.02);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .erase:hover > #bin {
     transform: translate(0, -5px);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
