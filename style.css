@@ -64,6 +64,22 @@ div.options {
     transition-timing-function: ease-in-out;
 }
 
+.mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+}
+
+.mode button {
+    width: 100%;
+    color: white;
+    background: #333333;
+    padding: 16px;
+}
+
 .erase {
     display: flex;
     flex-direction: column;
