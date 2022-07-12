@@ -11,3 +11,59 @@ html, body {
 body, ul, ol {
     margin: 0;
 }
+
+header {
+    text-align: center;
+    padding: 32px;
+    font-size: 54px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+section#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 200px;
+}
+
+
+#colorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border: none;
+}
+
+#colorPicker::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+
+#colorPicker::-moz-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+
+#colorPicker:hover {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    transition-property: transform;
+    transform: scale(1.1);
+    transition-timing-function: ease-in-out;
+}
+
+div.outer-container {
+
+}
