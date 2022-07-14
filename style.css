@@ -336,3 +336,8 @@ section.empty {
     transition: all 0.5s ease-in-out;
     transform: rotate(360deg) scale(1.5);
   }
+
+  section#rainbow {
+    display: flex;
+    justify-content: center;
+  }
