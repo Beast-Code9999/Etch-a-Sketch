@@ -6,30 +6,49 @@ input[type='checkbox'].toggle {
 
 input[type='checkbox'].toggle + label {
     display: flex;
+    position: relative;
     align-items: center;
     font-size: 3em;
+    cursor: pointer;
 }
 
 input[type='checkbox'].toggle + label::before {
     content: '';
     width: 2em;
     height: 1em;
-    background-color: #ddd;
+    background-color: rgb(190, 190, 190);
     border-radius: 1em;
     margin-right: 1em;
+    transition: background-color 0.2s ease-in-out;
 
 }
 
 input[type='checkbox'].toggle + label::after {
     content: '';
-    width: 1em;
-    height: 1em;
-    background-color: #ddd;
+    position: absolute;
+    left: 0.1em;
+    width: .9em;
+    height: .9em;
+    background-color: rgb(255, 255, 255);
     border-radius: 1em;
     margin-right: 1em;
+    transition: background-color 200ms ease-in-out, transform 0.2s ease-in-out;
+}
 
+input[type='checkbox'].toggle:focus + label::before {
+    outline: 5px solid black;
+}
+
+input[type='checkbox'].toggle:checked + label::before {
+    background-color: hsl(221, 70%, 80%);
+}
+
+input[type='checkbox'].toggle:checked + label::after {
+    /* left: 1em; */
+    transform: translateX(100%);
+    background-color: hsl(221, 70%, 60%);
 }
 
 input[type='checkbox'].toggle:checked + label {
-    color: red
+    color:  hsl(221, 70%, 60%);
 }
