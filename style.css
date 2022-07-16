@@ -342,13 +342,11 @@ section.empty {
     justify-content: center;
   }
 
-  /* .grid-container {
-    display: grid;
-    grid-template-columns: repeat(24, 1fr);
-
-  } */
-
   .grid-container div {
     outline: 0.009px solid rgba(173, 173, 173, 0.5);
     
+  }
+
+  .hover-classic {
+    background-color: #333333;
   }

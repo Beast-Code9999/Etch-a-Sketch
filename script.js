@@ -5,6 +5,7 @@ const gridContainer = document.querySelector('.grid-container');
 const sliderH1 = document.querySelector('.slider  h1');
 const slider = document.getElementById('slider').value;
 const checkToggle = document.getElementById('check');
+let mode = 'default';
 
 
 console.log(sliderH1.textContent)
@@ -22,15 +23,31 @@ function createDivs() {
     }
 
 }
-
 createDivs()
-// add class to grid-container for display-grid
 
-
-
-//write a function to create divs
-function createDiv() {
-
+// selecting mode 
+function getMode() {
+    modeBtn.forEach(button => {
+        button.addEventListener('click', () => {
+            mode = button.textContent.toLowerCase();
+            
+        })
+    })
+    
 }
+
+//change color of divs inside container on hover
+function changeColor(){
+    const gridDivs = gridContainer.querySelectorAll('div');
+    gridDivs.forEach(div => {
+        div.addEventListener('mouseenter', function(event) {
+            event.target.style.backgroundColor = 'rgba(173, 173, 173, 0.5)';
+            console.log(event)
+            console.log(div)
+        })
+    })
+}
+
+changeColor()
 
 
