@@ -13,7 +13,15 @@ function updateH1(size) {
     sliderH1.textContent = `${size}x${size}`
 }
 
+// create divs inside container
+function createDivs() {
+    for(let i = 1; i <= (slider * slider); i++) {
+        const div = document.createElement('div');
+        gridContainer.appendChild(div);
+    }
+}
 
+createDivs()
 
 //write a function to create divs
 function createDiv() {
