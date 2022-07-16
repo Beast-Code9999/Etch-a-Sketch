@@ -15,13 +15,18 @@ function updateH1(size) {
 
 // create divs inside container
 function createDivs() {
+    gridContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${slider}, 1fr)`)
     for(let i = 1; i <= (slider * slider); i++) {
         const div = document.createElement('div');
         gridContainer.appendChild(div);
     }
+
 }
 
 createDivs()
+// add class to grid-container for display-grid
+
+
 
 //write a function to create divs
 function createDiv() {

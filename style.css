@@ -142,8 +142,8 @@ div.options {
 }
 
 div.outer-container {
-    width: 600px;
-    height: 600px;
+    width: 900px;
+    height: 900px;
     background-color: #333333;
     border-radius: 25px;
     display: flex;
@@ -162,8 +162,8 @@ div.outer-container {
 }
 
 .grid-container {
-    width: 500px;
-    height: 500px;
+    width: 750px;
+    height: 750px;
     background-color: white;
 }
 
@@ -340,4 +340,15 @@ section.empty {
   section#rainbow {
     display: flex;
     justify-content: center;
+  }
+
+  /* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+
+  } */
+
+  .grid-container div {
+    outline: 0.009px solid rgba(173, 173, 173, 0.5);
+    
   }
