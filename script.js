@@ -49,5 +49,12 @@ function getMode() {
 // }
 // changeColor()
 
+function changeColor(type) {
+    const gridDiv = gridContainer.querySelectorAll('div');
+    gridDiv.forEach(div => {
+        div.addEventListener(type, )
+    })
+}
+
 
 
