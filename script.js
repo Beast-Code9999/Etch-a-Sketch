@@ -37,17 +37,17 @@ function getMode() {
 }
 
 //change color of divs inside container on hover
-function changeColor(){
-    const gridDivs = gridContainer.querySelectorAll('div');
-    gridDivs.forEach(div => {
-        div.addEventListener('mouseenter', function(event) {
-            event.target.style.backgroundColor = 'rgba(173, 173, 173, 0.5)';
-            console.log(event)
-            console.log(div)
-        })
-    })
-}
+// function changeColor(){
+//     const gridDivs = gridContainer.querySelectorAll('div');
+//     gridDivs.forEach(div => {
+//         div.addEventListener('mouseenter', function(event) {
+//             event.target.style.backgroundColor = 'rgba(173, 173, 173, 0.5)';
+//             console.log(event)
+//             console.log(div)
+//         })
+//     })
+// }
+// changeColor()
 
-changeColor()
 
 
