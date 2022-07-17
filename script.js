@@ -52,9 +52,13 @@ function getMode() {
 function changeColor(type) {
     const gridDiv = gridContainer.querySelectorAll('div');
     gridDiv.forEach(div => {
-        div.addEventListener(type, )
+        div.addEventListener(type, e => {
+            e.target.style.backgroundColor = 'gray'
+        })
     })
 }
+
+changeColor('mouseenter');
 
 
 
