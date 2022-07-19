@@ -17,7 +17,7 @@ function updateH1(size) {
 
 // create divs inside container
 function createDivs(value) {
-    gridContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${sliderValue}, 1fr)`)
+    gridContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${value}, 1fr)`)
     for(let i = 1; i <= (value * value); i++) {
         const div = document.createElement('div');
         gridContainer.appendChild(div);
@@ -27,19 +27,26 @@ function createDivs(value) {
 }
 
 // listen to slider on click and dynamically change the vlaue of divs * sivs and textContent
+function updateSlider() {
+    slider.addEventListener('change', (e) => {
+        gridContainer.innerHTML = '';
+        createDivs(e.target.value);
+        mode = 'default'
+        changeColor('mouseenter', mode)
+    })
+}
 
+updateSlider();
 
 // when windows load, give default settings
 function createTraitsOnLoad() {
     window.addEventListener('load', () => {
         mode = 'classic'
         createDivs(sliderValue)
-        changeColor('mouseenter');
+        changeColor('mouseenter', mode);
         
     })
 }
-
-createTraitsOnLoad();
 
 // select color
 
@@ -50,8 +57,7 @@ function getMode() {
     modeBtn.forEach(button => {
         button.addEventListener('click', () => {
             mode = button.textContent.toLowerCase();
-            console.log(mode)
-            changeColor('mouseenter');
+            changeColor('mouseenter', mode);
         })
     })
 }
@@ -66,14 +72,14 @@ function randomColor() {
     return `#${randColor.toUpperCase()}`
 }
 
-function changeColor(type) {
+function changeColor(type, modeColor) {
     const gridDiv = gridContainer.querySelectorAll('div');
     gridDiv.forEach(div => {
         div.addEventListener(type, e => {
-            if(mode == 'default' || mode == 'classic') {
+            if(modeColor == 'default' || modeColor == 'classic') {
                 e.target.style.backgroundColor = 'gray'
             }
-            else if(mode == 'modern') {
+            else if(modeColor == 'modern') {
                 e.target.style.backgroundColor = 'black'
             }
             else {
@@ -85,6 +91,12 @@ function changeColor(type) {
 
 getMode()
 
+
+function start() {
+    createTraitsOnLoad();
+}
+
+start()
 
 
 
