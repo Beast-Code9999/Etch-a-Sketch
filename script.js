@@ -3,7 +3,7 @@ const modeBtn = document.querySelectorAll('.mode button');
 const erase = document.querySelector('.erase')
 const gridContainer = document.querySelector('.grid-container');
 const sliderH1 = document.querySelector('.slider  h1');
-const slider = document.querySelector('slider');
+const slider = document.querySelector('.slider');
 const sliderValue = document.getElementById('slider').value;
 const checkToggle = document.getElementById('check');
 let mode = 'default';
@@ -16,16 +16,15 @@ function updateH1(size) {
 }
 
 // create divs inside container
-function createDivs() {
+function createDivs(value) {
     gridContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${sliderValue}, 1fr)`)
-    for(let i = 1; i <= (sliderValue * sliderValue); i++) {
+    for(let i = 1; i <= (value * value); i++) {
         const div = document.createElement('div');
         gridContainer.appendChild(div);
-        updateH1(sliderValue);
+        updateH1(value);
     }
 
 }
-createDivs()
 
 // listen to slider on click and dynamically change the vlaue of divs * sivs and textContent
 
@@ -33,12 +32,18 @@ createDivs()
 // when windows load, give default settings
 function createTraitsOnLoad() {
     window.addEventListener('load', () => {
-        mode = 'default'
+        mode = 'classic'
+        createDivs(sliderValue)
         changeColor('mouseenter');
+        
     })
 }
 
 createTraitsOnLoad();
+
+// select color
+
+
 
 // selecting mode 
 function getMode() {
@@ -51,18 +56,15 @@ function getMode() {
     })
 }
 
-//change color of divs inside container on hover
-// function changeColor(){
-//     const gridDivs = gridContainer.querySelectorAll('div');
-//     gridDivs.forEach(div => {
-//         div.addEventListener('mouseenter', function(event) {
-//             event.target.style.backgroundColor = 'rgba(173, 173, 173, 0.5)';
-//             console.log(event)
-//             console.log(div)
-//         })
-//     })
-// }
-// changeColor()
+// make a random color
+function randomColor() {
+    let maxValue = 0xFFFFFF; // 16777215
+    let randomNumber = Math.random() * maxValue; 
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColor = randomNumber.padStart(6, 0);   
+    return `#${randColor.toUpperCase()}`
+}
 
 function changeColor(type) {
     const gridDiv = gridContainer.querySelectorAll('div');
@@ -73,6 +75,9 @@ function changeColor(type) {
             }
             else if(mode == 'modern') {
                 e.target.style.backgroundColor = 'black'
+            }
+            else {
+                e.target.style.backgroundColor = randomColor();
             }
         })
     })
