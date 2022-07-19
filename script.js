@@ -1,4 +1,4 @@
-const colorPicker = document.getElementById('colorPicker').value;
+const colorPicker = document.getElementById('colorPicker');
 const modeBtn = document.querySelectorAll('.mode button');
 const erase = document.querySelector('.erase')
 const gridContainer = document.querySelector('.grid-container');
@@ -31,12 +31,13 @@ function updateSlider() {
     slider.addEventListener('change', (e) => {
         gridContainer.innerHTML = '';
         createDivs(e.target.value);
-        mode = 'default'
-        changeColor('mouseenter', mode)
+        // if(colorPicker.value !== '#333333'){
+        //     chasngeColor('mouseenter', '', )
+        // }
     })
 }
-
 updateSlider();
+
 
 // when windows load, give default settings
 function createTraitsOnLoad() {
@@ -49,8 +50,17 @@ function createTraitsOnLoad() {
 }
 
 // select color
+let selectColor = () => {
+    colorPicker.addEventListener('change', (e) => {
+        const mod = e.target.value;
+        changeColor('mouseenter', '', mod)
+        
+    })
+}
 
+selectColor()
 
+console.log(colorPicker.value)
 
 // selecting mode 
 function getMode() {
@@ -58,6 +68,7 @@ function getMode() {
         button.addEventListener('click', () => {
             mode = button.textContent.toLowerCase();
             changeColor('mouseenter', mode);
+            updateSlider()
         })
     })
 }
@@ -72,7 +83,7 @@ function randomColor() {
     return `#${randColor.toUpperCase()}`
 }
 
-function changeColor(type, modeColor) {
+function changeColor(type, modeColor, picker) {
     const gridDiv = gridContainer.querySelectorAll('div');
     gridDiv.forEach(div => {
         div.addEventListener(type, e => {
@@ -82,8 +93,11 @@ function changeColor(type, modeColor) {
             else if(modeColor == 'modern') {
                 e.target.style.backgroundColor = 'black'
             }
-            else {
+            else if(modeColor == 'special') {
                 e.target.style.backgroundColor = randomColor();
+            }
+            else {
+                e.target.style.backgroundColor = picker;
             }
         })
     })
