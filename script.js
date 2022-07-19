@@ -1,4 +1,4 @@
-const colorPicker = document.getElementById('colorPicker').value;
+const colorPicker = document.getElementById('colorPicker');
 const modeBtn = document.querySelectorAll('.mode button');
 const erase = document.querySelector('.erase')
 const gridContainer = document.querySelector('.grid-container');
@@ -47,8 +47,13 @@ function createTraitsOnLoad() {
 }
 
 // select color
+function pickColor() {
+    colorPicker.addEventListener('change', (e) => {
+        console.log(e.target.value)
+    })
+}
 
-
+pickColor()
 
 // selecting mode 
 function getMode() {
@@ -80,8 +85,6 @@ function clear() {
     })
 }
 
-
-
 // when mode buttons are pressed, colors are chosen
 function changeColor(type, modeColor) {
     const gridDiv = gridContainer.querySelectorAll('div');
@@ -99,9 +102,6 @@ function changeColor(type, modeColor) {
         })
     })
 }
-
-
-
 
 function start() {
     createTraitsOnLoad();
