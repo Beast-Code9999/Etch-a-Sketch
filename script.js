@@ -8,8 +8,6 @@ const sliderValue = document.getElementById('slider').value;
 const checkToggle = document.getElementById('check');
 let mode = 'default';
 
-
-console.log(sliderH1.textContent)
 // create a function to update textContent of sliderH1
 function updateH1(size) {
     sliderH1.textContent = `${size}x${size}`
@@ -72,6 +70,19 @@ function randomColor() {
     return `#${randColor.toUpperCase()}`
 }
 
+//write a clear section to erase everything once bin is pressed
+function clear() {
+    erase.addEventListener('click', () =>  {
+        const divs = gridContainer.querySelectorAll('div');
+        divs.forEach(div => {
+            div.style.backgroundColor = 'white';
+        })
+    })
+}
+
+
+
+// when mode buttons are pressed, colors are chosen
 function changeColor(type, modeColor) {
     const gridDiv = gridContainer.querySelectorAll('div');
     gridDiv.forEach(div => {
@@ -89,11 +100,13 @@ function changeColor(type, modeColor) {
     })
 }
 
-getMode()
+
 
 
 function start() {
     createTraitsOnLoad();
+    getMode()
+    clear()
 }
 
 start()
