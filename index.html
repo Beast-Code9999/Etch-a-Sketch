@@ -7,10 +7,12 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./toggleBtn.css">
+    <link rel="stylesheet" href="./surprise.css">
     <script src="script.js" defer></script>
+    <script src="surprise.js" defer></script>
 </head>
 <body>
-    <header>Etch-a-Sketch</header>
+    <header id="heading">Etch-a-Sketch</header>
     <section id="main">
         <div class="options">
             <div class="color">
@@ -49,10 +51,10 @@
     </section>
     <section class="empty"></section>
     <section id="rainbow">
-        <input type="checkbox" class="toggle" id="check">
+        <input type="checkbox" class="toggle" id="check" autocomplete="off">
         <label for="check">Surprise!</label>
     </section>
-    <footer>
+    <footer id="foot">
         Copyright © 
         <script> document.write(new Date().getFullYear())</script> 
         <a href="https://github.com/Beast-Code9999" id="beastcode" target="_blank"><span>Beast Code</span> </a>  

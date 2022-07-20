@@ -1,0 +1,28 @@
+header.surprise {
+    color: #ffed66;
+    background-color: #78cccb;
+}
+
+section#main.surprise {
+    background-color: #78cccb;
+}
+
+section.empty.surprise {
+    background-color: #78cccb;
+}
+
+section#rainbow.surprise {
+    background-color: #78cccb;
+}
+
+footer#foot.surprise {
+    background-color: #78cccb;
+}
+
+.outer-container.surprise {
+    background-color: #ff5e5b;
+}
+
+.title-container.surprise {
+    color: #ffed66;
+}
