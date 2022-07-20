@@ -7,7 +7,6 @@ const footer = document.getElementById('foot');
 const outerCont = document.querySelector('.outer-container');
 const titleCont = document.querySelector('.title-container');
 
-console.log(surpriseCheck)
 
 surpriseCheck.addEventListener('change', (e) => {
     if (e.target.checked) {
