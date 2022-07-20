@@ -48,8 +48,9 @@ function createTraitsOnLoad() {
 
 // select color
 function pickColor() {
-    colorPicker.addEventListener('change', (e) => {
-        console.log(e.target.value)
+    colorPicker.addEventListener('change', (e) => { //e.target === input
+        const color = e.target.value;
+        changeColor('mouseenter', '', color);
     })
 }
 
@@ -88,7 +89,7 @@ function clear() {
 }
 
 // when mode buttons are pressed, colors are chosen
-function changeColor(type, modeColor) {
+function changeColor(type, modeColor, colorPicker) {
     const gridDiv = gridContainer.querySelectorAll('div');
     gridDiv.forEach(div => {
         div.count = 0;
@@ -98,18 +99,22 @@ function changeColor(type, modeColor) {
                 div.style.opacity = 1;
             }
             else if(modeColor === 'modern') {
-                div.style.backgroundColor = '#707070';
                 div.count ++;
-                console.log(div.count)
-                div.style.opacity = 0.2 * div.count;
+                div.style.backgroundColor = '#707070';
+                div.style.opacity = 0.1 * div.count;
             }
             else if(modeColor === 'special') {
                 div.style.backgroundColor = randomColor();
                 div.style.opacity = 1; 
             }
+            else {
+                div.style.backgroundColor = colorPicker;
+            }
         })
     })
 }
+
+
 
 function start() {
     createTraitsOnLoad();
