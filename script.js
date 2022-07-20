@@ -109,6 +109,7 @@ function changeColor(type, modeColor, colorPicker) {
             }
             else {
                 div.style.backgroundColor = colorPicker;
+                div.style.opacity = 1;
             }
         })
     })
