@@ -349,10 +349,10 @@ section.empty {
   }
 
   .grid-container div {
-    outline: 0.009px solid rgba(173, 173, 173, 0.5);
-    
+    outline: 0.009px solid #adadad80;
   }
 
   .hover-classic {
     background-color: #333333;
   }
+  
