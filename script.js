@@ -114,8 +114,6 @@ function changeColor(type, modeColor, colorPicker) {
     })
 }
 
-
-
 function start() {
     createTraitsOnLoad();
     getMode()
