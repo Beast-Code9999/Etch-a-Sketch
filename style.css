@@ -134,10 +134,16 @@ div.options {
     /* transform: scale(1.02); */
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    color: hsl(0, 0%, 44%);
 }
 
 .erase:hover > #bin {
     transform: translate(0, -5px);
+    transition: all 0.2s ease-in-out;
+}
+
+.erase:active > #bin {
+    transform: translate(0, -10px);
     transition: all 0.2s ease-in-out;
 }
 

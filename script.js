@@ -65,6 +65,8 @@ function getMode() {
     })
 }
 
+//
+
 // make a random color
 function randomColor() {
     let maxValue = 0xFFFFFF; // 16777215
@@ -89,15 +91,21 @@ function clear() {
 function changeColor(type, modeColor) {
     const gridDiv = gridContainer.querySelectorAll('div');
     gridDiv.forEach(div => {
-        div.addEventListener(type, e => {
-            if(modeColor == 'default' || modeColor == 'classic') {
-                e.target.style.backgroundColor = 'gray'
+        div.count = 0;
+        div.addEventListener(type, () => { // e => {e.target === div}  true
+            if(modeColor === 'default' || modeColor === 'classic') {
+                div.style.backgroundColor = '#707070'
+                div.style.opacity = 1;
             }
-            else if(modeColor == 'modern') {
-                e.target.style.backgroundColor = 'black'
+            else if(modeColor === 'modern') {
+                div.style.backgroundColor = '#707070';
+                div.count ++;
+                console.log(div.count)
+                div.style.opacity = 0.2 * div.count;
             }
-            else {
-                e.target.style.backgroundColor = randomColor();
+            else if(modeColor === 'special') {
+                div.style.backgroundColor = randomColor();
+                div.style.opacity = 1; 
             }
         })
     })
